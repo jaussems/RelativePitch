@@ -1,21 +1,45 @@
 .page {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .piano {
   width: 10rem;
-  background: red;
+  background: white;
   height: 10rem;
   display: flex;
+  z-index: 1;
+  position: relative;
+
   &__note {
     height: auto;
     flex:1;
     background: white;
     border: 1px solid black;
+    z-index: 2;
+
+    &--has-next-note {
+      border-right: none;
+      flex-grow: 1;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--sharp {
+      height: 50%;
+      background: black;
+      z-index: 3;
+      flex: 1;
+      width: .75rem;
+      border-bottom: 1px solid black;
+    }
   }
+}
+
+.no-borders {
+  border-right: none;
+  border-left: none;
 }
