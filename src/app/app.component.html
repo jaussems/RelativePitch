@@ -1,30 +1,34 @@
-<div class="piano" >
-  <div class="piano__note piano__note--has-next-note"></div>
-  <div class="piano__note__container">
-    <div class="piano__note--sharp"></div>
-    <div class="piano__note no-borders  "></div>
+<div class="page">
+  <button (click)="playRandomNote()" > Click to play random sound</button>
+  <div class="piano" >
+    <div id="C4" class="piano__note piano__note--has-next-note" (click)="playPianoNote('C4')" ></div>
+    <div class="piano__note__container">
+      <div id="C4#" class="piano__note--sharp " (click)="playPianoNote('C4#')"></div>
+      <div class="piano__note no-borders  " (click)="playPianoNote('C4')"></div>
+    </div>
+    <div id="D4" class="piano__note" (click)="playPianoNote('D4')">
+    </div>
+    <div class="piano__note__container">
+      <div id="D4#" class="piano__note--sharp" (click)="playPianoNote('D4#')"></div>
+      <div class="piano__note no-borders" (click)="playPianoNote('D4')"></div>
+    </div>
+    <div id="E4" class="piano__note piano__note--has-previous-note piano__note--has-next-note" (click)="playPianoNote('E4')"></div>
+    <div id="F4" class="piano__note piano__note piano__note--has-next-note" (click)="playPianoNote('F4')"></div>
+    <div class="piano__note__container" >
+      <div id="F4#" class="piano__note--sharp" (click)="playPianoNote('F4#')"></div>
+      <div class="piano__note no-borders    "  (click)="playPianoNote('E4')"></div>
+    </div>
+    <div id="G4" class="piano__note" (click)="playPianoNote('G4')"></div>
+    <div class="piano__note__container">
+      <div id="G4#" class="piano__note--sharp" (click)="playPianoNote('G4#')"></div>
+      <div class="piano__note no-borders  "></div>
+    </div>
+    <div id="A4" class="piano__note" (click)="playPianoNote('A4')"></div>
+    <div class="piano__note__container">
+      <div id="A4#" class="piano__note--sharp" (click)="playPianoNote('G4#')"></div>
+      <div class="piano__note no-borders  "></div>
+    </div>
+    <div id="B4" class="piano__note" (click)="playPianoNote('B4')"></div>
   </div>
-  <div class="piano__note">
-  </div>
-  <div class="piano__note__container">
-    <div class="piano__note--sharp"></div>
-    <div class="piano__note no-borders  "></div>
-  </div>
-  <div class="piano__note piano__note--has-previous-note piano__note--has-next-note"></div>
-  <div class="piano__note piano__note piano__note--has-next-note"></div>
-  <div class="piano__note__container">
-    <div class="piano__note--sharp"></div>
-    <div class="piano__note no-borders  "></div>
-  </div>
-  <div class="piano__note  "></div>
-  <div class="piano__note__container">
-    <div class="piano__note--sharp"></div>
-    <div class="piano__note no-borders  "></div>
-  </div>
-  <div class="piano__note "></div>
-  <div class="piano__note__container">
-    <div class="piano__note--sharp"></div>
-    <div class="piano__note no-borders  "></div>
-  </div>
-  <div class="piano__note"></div>
+
 </div>
