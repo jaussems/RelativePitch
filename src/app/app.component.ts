@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, computed, OnInit, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,7 +7,11 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent{
+export class AppComponent {
+  note = signal('');
+  randomNote = signal('');
+  rightNotePressed = signal(false);
+
   /**
    * FIXMe: make a loop in the future as this will be come quite big
    */
@@ -30,6 +34,13 @@ export class AppComponent{
    var audio = new Audio();
    audio.src = this.allPianoNotes[note];
    audio.play();
+   this.note.set(note);
+     this.checkNote();
+  }
+
+  checkNote() {
+    let isCorrectNote = this.note() === this.randomNote();
+    this.rightNotePressed.set(isCorrectNote);
   }
 
   playRandomNote() {
@@ -38,5 +49,8 @@ export class AppComponent{
     var audio = new Audio();
     audio.src = this.allPianoNotes[randomPianoNote];
     audio.play();
+    this.randomNote.set(randomPianoNote);
+
   }
+
 }

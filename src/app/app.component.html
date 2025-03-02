@@ -1,5 +1,19 @@
 <div class="page">
-  <button (click)="playRandomNote()" > Click to play random sound</button>
+  <div class="page__button-group">
+  <button class="btn" (click)="playRandomNote()" > Click to play random sound</button>
+    <div class="page__pressed-note">
+      <h1>The key pressed is {{ note() }}</h1>
+      <div>
+
+        @if(rightNotePressed()) {
+          <p>Congrats you pressed the correct note</p>
+        }
+        @else {
+          <p>Please try again </p>
+        }
+      </div>
+    </div>
+  </div>
   <div class="piano" >
     <div id="C4" class="piano__note piano__note--has-next-note" (click)="playPianoNote('C4')" ></div>
     <div class="piano__note__container">
@@ -21,14 +35,13 @@
     <div id="G4" class="piano__note" (click)="playPianoNote('G4')"></div>
     <div class="piano__note__container">
       <div id="G4#" class="piano__note--sharp" (click)="playPianoNote('G4#')"></div>
-      <div class="piano__note no-borders  "></div>
+      <div class="piano__note no-borders  " (click)="playPianoNote('G4')"></div>
     </div>
     <div id="A4" class="piano__note" (click)="playPianoNote('A4')"></div>
     <div class="piano__note__container">
       <div id="A4#" class="piano__note--sharp" (click)="playPianoNote('G4#')"></div>
-      <div class="piano__note no-borders  "></div>
+      <div class="piano__note no-borders" (click)="playPianoNote('A4')"></div>
     </div>
     <div id="B4" class="piano__note" (click)="playPianoNote('B4')"></div>
   </div>
-
 </div>
